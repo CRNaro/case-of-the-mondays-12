@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS 
-CREATE DATABASE employee_db:
+DROP DATABASE IF EXISTS employee_db;
+CREATE DATABASE employee_db;
 
 USE employee_db;
 
@@ -24,4 +24,10 @@ CREATE TABLE employee (
     manager_id INT,
     FOREIGN KEY (role_id) REFERENCES role(id),
     FOREIGN KEY (manager_id) REFERENCES employee(id)
+);
+
+CREATE TABLE manager (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT,
+    FOREIGN KEY (employee_id) REFERENCES employee(id)
 );

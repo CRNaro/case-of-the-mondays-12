@@ -15,9 +15,9 @@ database.connect(function(err) {
 
 // View all departments
 function viewAllDepartments() {
-    database.query('SELECT * FROM department', function(err, res) {
+    database.query('SELECT * FROM department', function(err, res) {  //connection.query instead of database.query
         if (err) throw err;
-        console.table(res);
+        console.table(res);  
         start();
     });
 }
